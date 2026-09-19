@@ -1,282 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Cortex Aminos — Research Compliance Notice</title>
-<style>
-  :root{
-    --bg:#0b0c0e;
-    --bg-alt:#131417;
-    --card:#17181c;
-    --border:#2a2c31;
-    --text:#f2f2f0;
-    --text-dim:#9a9ca3;
-    --accent:#22d3ff;
-    --accent-dim:#1aa8cc;
-    --danger:#ff6b5e;
-  }
-  @media (prefers-color-scheme: light){
-    :root:not([data-theme="dark"]){
-      --bg:#0b0c0e;
-      --bg-alt:#131417;
-      --card:#17181c;
-      --border:#2a2c31;
-      --text:#f2f2f0;
-      --text-dim:#9a9ca3;
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Cortex Aminos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+        background:#05070a;
+        color:#ffffff;
+        font-family:"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing:antialiased;
+        overflow-x:hidden;
     }
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:32px 16px;
-    line-height:1.55;
-  }
-  .wrap{
-    width:100%;
-    max-width:640px;
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-  .badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--accent);
-    border:1px solid var(--border);
-    background:var(--bg-alt);
-    padding:6px 12px;
-    border-radius:999px;
-    margin:0 auto 22px;
-  }
-  .badge svg{width:12px;height:12px;flex-shrink:0;}
-  h1{
-    font-size:clamp(26px,4vw,36px);
-    font-weight:650;
-    letter-spacing:-0.01em;
-    margin:0 0 10px;
-  }
-  .brand{
-    font-size:13px;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    color:var(--text-dim);
-    margin:0 0 6px;
-  }
-  .lede{
-    color:var(--text-dim);
-    font-size:15.5px;
-    margin:0 auto 28px;
-    max-width:52ch;
-    text-align:center;
-  }
-  .card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:24px 24px 20px;
-    margin-bottom:22px;
-    width:100%;
-    text-align:center;
-  }
-  .card h2{
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    color:var(--text-dim);
-    margin:0 0 14px;
-    font-weight:600;
-    text-align:center;
-  }
-  ul.terms{
-    list-style:none;
-    margin:0 auto;
-    padding:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-    max-width:440px;
-  }
-  ul.terms li{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    text-align:left;
-    font-size:14.5px;
-    color:var(--text);
-  }
-  ul.terms li svg{
-    flex-shrink:0;
-    width:18px;height:18px;
-    margin-top:2px;
-    color:var(--accent);
-  }
-  .fineprint{
-    font-size:12.5px;
-    color:var(--text-dim);
-    border-top:1px solid var(--border);
-    margin-top:18px;
-    padding-top:16px;
-    text-align:center;
-  }
-  .fineprint strong{color:var(--text);}
-  .cta-row{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    align-items:center;
-    margin-top:8px;
-  }
-  #enter-btn{
-    appearance:none;
-    border:none;
-    cursor:pointer;
-    background:var(--accent);
-    color:#0b0c0e;
-    font-size:15.5px;
-    font-weight:650;
-    padding:14px 28px;
-    border-radius:12px;
-    width:100%;
-    max-width:340px;
-    transition:transform .12s ease, background .12s ease;
-  }
-  #enter-btn:hover{background:var(--accent-dim);}
-  #enter-btn:active{transform:scale(0.98);}
-  #enter-btn:disabled{
-    opacity:.5;
-    cursor:not-allowed;
-  }
-  .disabled-hint{
-    font-size:12.5px;
-    color:var(--danger);
-    min-height:16px;
-    text-align:center;
-  }
-  .disclaimer{
-    font-size:11.5px;
-    color:var(--text-dim);
-    text-align:center;
-    margin-top:26px;
-    max-width:56ch;
-  }
-  .disclaimer a{color:var(--text-dim);}
-  noscript .noscript-box{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:16px;
-    font-size:13px;
-    color:var(--text-dim);
-    text-align:center;
-    margin-top:12px;
-  }
-</style>
-</head>
-<body>
 
-<div class="wrap">
-  <div class="badge">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg>
-    Compliance Checkpoint
-  </div>
+    @keyframes cxHolo{ 0%{background-position:0% 50%} 100%{background-position:300% 50%} }
 
-  <p class="brand">Cortex Aminos</p>
-  <h1>Research Use Only — Please Confirm Before Continuing</h1>
-  <p class="lede">
-    This page exists to confirm that visitors from this ad meet the criteria required to view
-    Cortex Aminos' research materials. Please read the notice below before proceeding to the site.
-  </p>
+    .stage{
+        position:relative;
+        min-height:100vh;
+        min-height:100dvh;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:34px 24px 40px;
+    }
 
-  <div class="card">
-    <h2>Before You Continue</h2>
-    <ul class="terms">
-      <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>I am at least <strong>21 years of age</strong>.</span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>I am a <strong>qualified researcher</strong> or purchasing on behalf of a laboratory, institution, or research organization.</span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>I understand all products are sold <strong>strictly for laboratory research use</strong> and are not for human or veterinary consumption.</span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>I understand these products have <strong>not been evaluated by the FDA</strong> and are not intended to diagnose, treat, cure, or prevent any disease.</span>
-      </li>
-    </ul>
+    .topline{
+        position:absolute; top:0; left:0; right:0; height:2px;
+        background:linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+        box-shadow:0 0 14px rgba(255,255,255,.5);
+    }
 
-    <div class="fineprint">
-      <strong>Full Disclaimer:</strong> By proceeding, you affirm that the statements above are true and accurate.
-      Cortex Aminos (Cortex Research LLC) sells research compounds exclusively to qualified researchers for
-      laboratory use only. Misuse of this affirmation is a violation of our
-      <a href="#" style="color:var(--text-dim)">Terms of Service</a>.
-    </div>
-  </div>
+    .inner{ width:100%; max-width:540px; }
 
-  <div class="cta-row">
-    <button id="enter-btn" disabled>Confirm &amp; Enter Site</button>
-    <div class="disabled-hint" id="hint">Check the box below to continue</div>
-    <label style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--text-dim);max-width:400px;width:100%;margin:2px auto 0;text-align:left;">
-      <input type="checkbox" id="confirm-check" style="margin-top:3px;flex-shrink:0;">
-      I confirm all the statements above are true.
-    </label>
-  </div>
+    /* logo on a black plate, holographic glow behind */
+    .logo{
+        position:relative;
+        display:inline-flex; align-items:center; justify-content:center;
+        margin:0 auto 24px;
+        padding:12px 20px;
+        border-radius:16px;
+        background:#000000;
+        border:1px solid rgba(255,255,255,.4);
+    }
+    .logo::before{
+        content:"";
+        position:absolute; inset:-15px;
+        z-index:-1;
+        border-radius:24px;
+        background:linear-gradient(115deg, #f4f4f6, #c7d2da, #bfeaf0, #e6c6ef, #f7f7f9, #c7d2da, #f4f4f6);
+        background-size:300% 300%;
+        filter:blur(18px);
+        opacity:.8;
+        pointer-events:none;
+        animation:cxHolo 6s linear infinite;
+    }
+    .logo img{ display:block; width:186px; max-width:60vw; height:auto; }
 
-  <p class="disclaimer">
-    All products are sold strictly for laboratory research use only. Not for human or veterinary
-    consumption. Not evaluated by the FDA. Not intended to diagnose, treat, cure, or prevent any disease.
-    © 2026 Cortex Aminos · Cortex Research LLC · All rights reserved.
-  </p>
+    /* heading - each sentence its own line, roomy, no glow */
+    .heading{
+        font-size:clamp(30px, 8.4vw, 52px);
+        font-weight:900;
+        line-height:1.16;
+        letter-spacing:-.5px;
+        margin-bottom:16px;
+    }
+    .heading .line{ display:block; color:#ffffff; }
+    .heading .cy{ display:block; margin-top:2px; color:#22d3ff; }
 
-  <noscript>
-    <div class="noscript-box">
-      JavaScript is required to continue to the Cortex Aminos site from this compliance page.
-    </div>
-  </noscript>
-</div>
+    /* sub-heading */
+    .sub{
+        font-size:clamp(15px, 4.3vw, 18px);
+        font-weight:600;
+        line-height:1.5;
+        color:#c5ced7;
+        max-width:440px;
+        margin:0 auto 24px;
+    }
 
-<script>
-  // The destination is intentionally kept out of the static HTML/DOM as a plain <a href>
-  // so search/ad crawlers parsing this page's markup cannot discover or follow the outbound
-  // link. It is only assembled and navigated to in response to a genuine user click, after
-  // the compliance checkbox is confirmed.
-  (function () {
-    var target = ["https:", "//", "cortexaminos.com", "/"].join("");
-    var btn = document.getElementById("enter-btn");
-    var check = document.getElementById("confirm-check");
-    var hint = document.getElementById("hint");
+    /* shipping offer - cyan glow behind the text (no box) */
+    .offer{
+        position:relative;
+        margin:0 auto 28px;
+        padding:10px 8px;
+        text-align:center;
+    }
+    .offer::before{
+        content:"";
+        position:absolute;
+        left:50%; top:50%;
+        transform:translate(-50%,-50%);
+        width:104%;
+        height:165%;
+        border-radius:60px;
+        background:radial-gradient(ellipse at center, rgba(34,211,255,.6), rgba(10,162,255,.24) 45%, transparent 72%);
+        filter:blur(24px);
+        z-index:0;
+        pointer-events:none;
+    }
+    .offer p, .offer span{ position:relative; z-index:1; }
+    .offer p{
+        font-size:clamp(16px, 4.6vw, 19px);
+        font-weight:900;
+        line-height:1.34;
+        color:#ffffff;
+        text-shadow:0 1px 8px rgba(0,0,0,.8);
+    }
+    .offer span{
+        display:block;
+        margin-top:6px;
+        font-size:11px;
+        font-weight:900;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:#ffffff;
+        text-shadow:0 1px 6px rgba(0,0,0,.8);
+    }
 
-    check.addEventListener("change", function () {
-      btn.disabled = !check.checked;
-      hint.textContent = check.checked ? "" : "Check the box below to continue";
-    });
+    /* small label above contact */
+    .qlabel{
+        font-size:13px;
+        font-weight:600;
+        color:#9aa3ad;
+        margin-bottom:9px;
+    }
 
-    btn.addEventListener("click", function () {
-      if (!check.checked) return;
-      window.location.href = target;
-    });
-  })();
-</script>
+    /* buttons */
+    .btn{
+        display:flex; align-items:center; justify-content:center; gap:11px;
+        width:100%;
+        text-decoration:none;
+        font-weight:900;
+        letter-spacing:.6px;
+        text-transform:uppercase;
+        border-radius:15px;
+        transition:transform .16s ease, box-shadow .25s ease, background .2s ease, color .2s ease;
+    }
 
-</body>
+    /* contact - outline */
+    .btn-contact{
+        padding:15px 18px;
+        margin-bottom:14px;
+        font-size:14px;
+        color:#ffffff;
+        border:1px solid rgba(255,255,255,.4);
+        background:rgba(255,255,255,.03);
+    }
+    .btn-contact:hover{
+        transform:translateY(-2px);
+        border-color:#ffffff;
+        background:rgba(255,255,255,.09);
+    }
+
+    /* main - white, black text, white outline, blue glow behind */
+    .btn-main{
+        padding:20px 18px;
+        font-size:clamp(16px, 4.8vw, 20px);
+        color:#000000;
+        border:2px solid #ffffff;
+        background:#ffffff;
+        box-shadow:0 0 30px rgba(34,211,255,.6), 0 0 62px rgba(0,180,255,.32);
+    }
+    .btn-main:hover{
+        transform:translateY(-2px);
+        box-shadow:0 0 44px rgba(34,211,255,.9), 0 0 84px rgba(0,180,255,.45);
+    }
+    .btn-main i{ transition:transform .2s ease; }
+    .btn-main:hover i{ transform:translateX(5px); }
+
+    @media (prefers-reduced-motion: reduce){
+        .logo::before{ animation:none; }
+    }
+    </style>
+    </head>
+    <body>
+
+    <section class="stage">
+        <div class="topline"></div>
+        <div class="inner">
+
+            <div class="logo">
+                <img src="https://cortexaminos.com/wp-content/uploads/2026/09/k-2-e1789510834590.png" alt="Cortex Aminos">
+            </div>
+
+            <h1 class="heading">
+                <span class="line">Lab grade research chemicals.</span>
+                <span class="cy">Pure and simple.</span>
+            </h1>
+
+            <p class="sub">We keep things clear and deliver quickly.</p>
+
+            <div class="offer">
+                <p>Free 2-Day UPS Air Shipping applied to all orders.</p>
+                <span>September only</span>
+            </div>
+
+            <p class="qlabel">Questions? Reach out for free.</p>
+            <a class="btn btn-contact" href="https://cortexaminos.com/">
+                <i class="fas fa-headset"></i> Contact 24/7 Support Team
+            </a>
+
+            <a class="btn btn-main" href="https://cortexaminos.com/">
+                Browse Research Catalog <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+    </section>
+
+    </body>
 </html>
